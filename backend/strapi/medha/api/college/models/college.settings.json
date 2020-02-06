@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "colleges",
+  "info": {
+    "name": "College"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "students": {
+      "collection": "student",
+      "via": "college"
+    },
+    "admins": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "rpc": {
+      "model": "rpc"
+    }
+  }
+}
