@@ -9,17 +9,13 @@
     "timestamps": true
   },
   "attributes": {
-    "college": {
-      "via": "students",
-      "model": "college"
-    },
     "user": {
       "unique": true,
       "plugin": "users-permissions",
       "model": "user"
     },
     "Stream": {
-      "type": "string"
+      "model": "stream"
     },
     "documents": {
       "collection": "file",
@@ -32,6 +28,38 @@
     },
     "physicallyHandicapped": {
       "type": "boolean"
+    },
+    "father_first_name": {
+      "type": "string",
+      "required": true
+    },
+    "father_last_name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "richtext",
+      "required": true
+    },
+    "date_of_birth": {
+      "type": "date",
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "required": true
+    },
+    "role_number": {
+      "type": "integer",
+      "required": true
+    },
+    "educations": {
+      "via": "student",
+      "collection": "education"
     }
   }
 }

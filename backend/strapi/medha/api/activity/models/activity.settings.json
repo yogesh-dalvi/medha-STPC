@@ -43,6 +43,30 @@
     },
     "streams": {
       "collection": "stream"
+    },
+    "address": {
+      "type": "richtext",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "upload_logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "age": {
+      "type": "integer",
+      "required": true
+    },
+    "trainer_name": {
+      "type": "string"
+    },
+    "question_set": {
+      "via": "activities",
+      "model": "question-set"
     }
   }
 }
