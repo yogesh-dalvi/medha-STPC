@@ -4,12 +4,15 @@
     "default": {
       "connector": "bookshelf",
       "settings": {
-        "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "client": "postgres",
+        "database": "medha",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "username": "medha",
+        "password": "medha",
+        "ssl": true
       },
-      "options": {
-        "useNullAsDefault": true
-      }
+      "options": {}
     }
   }
 }
