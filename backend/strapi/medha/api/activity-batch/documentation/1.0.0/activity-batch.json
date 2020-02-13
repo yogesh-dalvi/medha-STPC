@@ -537,7 +537,9 @@
           },
           "activity": {
             "required": [
-              "id"
+              "id",
+              "address",
+              "age"
             ],
             "properties": {
               "id": {
@@ -565,6 +567,24 @@
                 "type": "string"
               },
               "streams": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "upload_logo": {
+                "type": "string"
+              },
+              "age": {
+                "type": "integer"
+              },
+              "trainer_name": {
+                "type": "string"
+              },
+              "question_set": {
                 "type": "string"
               }
             }

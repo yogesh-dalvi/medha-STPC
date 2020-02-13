@@ -543,7 +543,10 @@
           },
           "main_college": {
             "required": [
-              "id"
+              "id",
+              "college_code",
+              "address",
+              "college_email"
             ],
             "properties": {
               "id": {
@@ -552,16 +555,28 @@
               "name": {
                 "type": "string"
               },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "admins": {
                 "type": "string"
               },
               "rpc": {
+                "type": "string"
+              },
+              "college_code": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "contact_number": {
+                "type": "string"
+              },
+              "college_email": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "string"
+              },
+              "principal": {
                 "type": "string"
               }
             }

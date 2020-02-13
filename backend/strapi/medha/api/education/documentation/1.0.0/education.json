@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/colleges": {
+    "/educations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/College"
+                    "$ref": "#/components/schemas/Education"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Education"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewEducation"
               }
             }
           }
         }
       }
     },
-    "/colleges/count": {
+    "/educations/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "parameters": []
       }
     },
-    "/colleges/{id}": {
+    "/educations/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Education"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Education"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewEducation"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Education"
         ],
         "parameters": [
           {
@@ -514,216 +514,107 @@
   },
   "components": {
     "schemas": {
-      "College": {
+      "Education": {
         "required": [
           "id",
-          "college_code",
-          "address",
-          "college_email"
+          "qualification",
+          "board"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "qualification": {
             "type": "string"
           },
-          "admins": {
+          "board": {
+            "type": "string"
+          },
+          "year_of_passing": {
+            "type": "integer"
+          },
+          "marks": {
+            "type": "number"
+          },
+          "student": {
             "required": [
               "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
+              "father_first_name",
+              "father_last_name",
+              "address",
+              "date_of_birth",
+              "gender",
+              "role_number"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "user": {
                 "type": "string"
               },
-              "email": {
+              "Stream": {
                 "type": "string"
               },
-              "provider": {
-                "type": "string"
+              "documents": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
+              "verifiedByCollege": {
                 "type": "boolean"
               },
-              "blocked": {
+              "physicallyHandicapped": {
                 "type": "boolean"
               },
-              "role": {
+              "father_first_name": {
                 "type": "string"
               },
-              "first_name": {
+              "father_last_name": {
                 "type": "string"
               },
-              "last_name": {
+              "address": {
                 "type": "string"
               },
-              "contact_number": {
+              "date_of_birth": {
                 "type": "string"
               },
-              "state": {
+              "gender": {
                 "type": "string"
               },
-              "zone": {
-                "type": "string"
+              "role_number": {
+                "type": "integer"
               },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
-              }
-            }
-          },
-          "rpc": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "main_college": {
-                "type": "string"
-              }
-            }
-          },
-          "college_code": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            }
-          },
-          "principal": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "contact_number": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
+              "educations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
         }
       },
-      "NewCollege": {
+      "NewEducation": {
         "required": [
-          "college_code",
-          "address",
-          "college_email"
+          "qualification",
+          "board"
         ],
         "properties": {
-          "name": {
+          "qualification": {
             "type": "string"
           },
-          "admins": {
+          "board": {
             "type": "string"
           },
-          "rpc": {
-            "type": "string"
+          "year_of_passing": {
+            "type": "integer"
           },
-          "college_code": {
-            "type": "string"
+          "marks": {
+            "type": "number"
           },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "type": "string"
-          },
-          "principal": {
+          "student": {
             "type": "string"
           }
         }
@@ -732,7 +623,7 @@
   },
   "tags": [
     {
-      "name": "College"
+      "name": "Education"
     }
   ]
 }
