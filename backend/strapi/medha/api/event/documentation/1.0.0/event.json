@@ -516,7 +516,10 @@
     "schemas": {
       "Event": {
         "required": [
-          "id"
+          "id",
+          "start_date_time",
+          "end_date_time",
+          "age"
         ],
         "properties": {
           "id": {
@@ -525,17 +528,208 @@
           "Title": {
             "type": "string"
           },
-          "date": {
+          "description": {
             "type": "string"
+          },
+          "start_date_time": {
+            "type": "datetime"
+          },
+          "end_date_time": {
+            "type": "datetime"
+          },
+          "address": {
+            "type": "string"
+          },
+          "rpc": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              },
+              "main_college": {
+                "type": "string"
+              }
+            }
+          },
+          "colleges": {
+            "required": [
+              "id",
+              "college_code",
+              "address",
+              "college_email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "admins": {
+                "type": "string"
+              },
+              "rpc": {
+                "type": "string"
+              },
+              "college_code": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "contact_number": {
+                "type": "string"
+              },
+              "college_email": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "string"
+              },
+              "principal": {
+                "type": "string"
+              }
+            }
+          },
+          "streams": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "age": {
+            "type": "integer"
+          },
+          "upload_logo": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
+          },
+          "question_set": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "questions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
       "NewEvent": {
+        "required": [
+          "start_date_time",
+          "end_date_time",
+          "age"
+        ],
         "properties": {
           "Title": {
             "type": "string"
           },
-          "date": {
+          "description": {
+            "type": "string"
+          },
+          "start_date_time": {
+            "type": "datetime"
+          },
+          "end_date_time": {
+            "type": "datetime"
+          },
+          "address": {
+            "type": "string"
+          },
+          "rpc": {
+            "type": "string"
+          },
+          "colleges": {
+            "type": "string"
+          },
+          "streams": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          },
+          "question_set": {
             "type": "string"
           }
         }

@@ -516,42 +516,25 @@
     "schemas": {
       "Student": {
         "required": [
-          "id"
+          "id",
+          "father_first_name",
+          "father_last_name",
+          "address",
+          "date_of_birth",
+          "gender",
+          "role_number"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "college": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "admins": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              }
-            }
-          },
           "user": {
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "first_name",
+              "last_name"
             ],
             "properties": {
               "id": {
@@ -581,13 +564,41 @@
               "role": {
                 "type": "string"
               },
-              "phoneNumber": {
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "contact_number": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              },
+              "rpc": {
+                "type": "string"
+              },
+              "college": {
                 "type": "string"
               }
             }
           },
           "Stream": {
-            "type": "string"
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
           },
           "documents": {
             "type": "array",
@@ -643,14 +654,71 @@
           },
           "physicallyHandicapped": {
             "type": "boolean"
+          },
+          "father_first_name": {
+            "type": "string"
+          },
+          "father_last_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "date_of_birth": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "role_number": {
+            "type": "integer"
+          },
+          "educations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "qualification",
+                "board"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "qualification": {
+                  "type": "string"
+                },
+                "board": {
+                  "type": "string"
+                },
+                "year_of_passing": {
+                  "type": "integer"
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "student": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
       "NewStudent": {
+        "required": [
+          "father_first_name",
+          "father_last_name",
+          "address",
+          "date_of_birth",
+          "gender",
+          "role_number"
+        ],
         "properties": {
-          "college": {
-            "type": "string"
-          },
           "user": {
             "type": "string"
           },
@@ -662,6 +730,34 @@
           },
           "physicallyHandicapped": {
             "type": "boolean"
+          },
+          "father_first_name": {
+            "type": "string"
+          },
+          "father_last_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "date_of_birth": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "role_number": {
+            "type": "integer"
+          },
+          "educations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }

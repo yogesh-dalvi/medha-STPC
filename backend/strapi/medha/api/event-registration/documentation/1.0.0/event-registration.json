@@ -537,7 +537,10 @@
           },
           "event": {
             "required": [
-              "id"
+              "id",
+              "start_date_time",
+              "end_date_time",
+              "age"
             ],
             "properties": {
               "id": {
@@ -546,20 +549,50 @@
               "Title": {
                 "type": "string"
               },
-              "date": {
+              "description": {
+                "type": "string"
+              },
+              "start_date_time": {
+                "type": "datetime"
+              },
+              "end_date_time": {
+                "type": "datetime"
+              },
+              "address": {
+                "type": "string"
+              },
+              "rpc": {
+                "type": "string"
+              },
+              "colleges": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "string"
+              },
+              "age": {
+                "type": "integer"
+              },
+              "upload_logo": {
+                "type": "string"
+              },
+              "question_set": {
                 "type": "string"
               }
             }
           },
           "student": {
             "required": [
-              "id"
+              "id",
+              "father_first_name",
+              "father_last_name",
+              "address",
+              "date_of_birth",
+              "gender",
+              "role_number"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "college": {
                 "type": "string"
               },
               "user": {
@@ -579,6 +612,30 @@
               },
               "physicallyHandicapped": {
                 "type": "boolean"
+              },
+              "father_first_name": {
+                "type": "string"
+              },
+              "father_last_name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "date_of_birth": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string"
+              },
+              "role_number": {
+                "type": "integer"
+              },
+              "educations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },

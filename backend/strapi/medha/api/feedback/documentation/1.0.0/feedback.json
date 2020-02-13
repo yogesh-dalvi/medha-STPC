@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/colleges": {
+    "/feedbacks": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/College"
+                    "$ref": "#/components/schemas/Feedback"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Feedback"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewFeedback"
               }
             }
           }
         }
       }
     },
-    "/colleges/count": {
+    "/feedbacks/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "parameters": []
       }
     },
-    "/colleges/{id}": {
+    "/feedbacks/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Feedback"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Feedback"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewFeedback"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Feedback"
         ],
         "parameters": [
           {
@@ -514,21 +514,115 @@
   },
   "components": {
     "schemas": {
-      "College": {
+      "Feedback": {
         "required": [
-          "id",
-          "college_code",
-          "address",
-          "college_email"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
+          "activity": {
+            "required": [
+              "id",
+              "address",
+              "age"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "activity_type": {
+                "type": "string"
+              },
+              "academic_year": {
+                "type": "string"
+              },
+              "college": {
+                "type": "string"
+              },
+              "start_datetime": {
+                "type": "datetime"
+              },
+              "end_datetime": {
+                "type": "datetime"
+              },
+              "education_year": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "upload_logo": {
+                "type": "string"
+              },
+              "age": {
+                "type": "integer"
+              },
+              "trainer_name": {
+                "type": "string"
+              },
+              "question_set": {
+                "type": "string"
+              }
+            }
           },
-          "admins": {
+          "event": {
+            "required": [
+              "id",
+              "start_date_time",
+              "end_date_time",
+              "age"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "start_date_time": {
+                "type": "datetime"
+              },
+              "end_date_time": {
+                "type": "datetime"
+              },
+              "address": {
+                "type": "string"
+              },
+              "rpc": {
+                "type": "string"
+              },
+              "colleges": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "string"
+              },
+              "age": {
+                "type": "integer"
+              },
+              "upload_logo": {
+                "type": "string"
+              },
+              "question_set": {
+                "type": "string"
+              }
+            }
+          },
+          "user": {
             "required": [
               "id",
               "username",
@@ -587,143 +681,52 @@
               }
             }
           },
-          "rpc": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "main_college": {
-                "type": "string"
-              }
-            }
-          },
-          "college_code": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            }
-          },
-          "principal": {
+          "question_set": {
             "required": [
               "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
+              "name"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "name": {
                 "type": "string"
               },
-              "email": {
-                "type": "string"
+              "questions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "provider": {
-                "type": "string"
+              "activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "contact_number": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
         }
       },
-      "NewCollege": {
-        "required": [
-          "college_code",
-          "address",
-          "college_email"
-        ],
+      "NewFeedback": {
         "properties": {
-          "name": {
+          "activity": {
             "type": "string"
           },
-          "admins": {
+          "event": {
             "type": "string"
           },
-          "rpc": {
+          "user": {
             "type": "string"
           },
-          "college_code": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "type": "string"
-          },
-          "principal": {
+          "question_set": {
             "type": "string"
           }
         }
@@ -732,7 +735,7 @@
   },
   "tags": [
     {
-      "name": "College"
+      "name": "Feedback"
     }
   ]
 }

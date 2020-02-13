@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/colleges": {
+    "/questions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/College"
+                    "$ref": "#/components/schemas/Question"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
         }
       }
     },
-    "/colleges/count": {
+    "/questions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "parameters": []
       }
     },
-    "/colleges/{id}": {
+    "/questions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/College"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCollege"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "College"
+          "Question"
         ],
         "parameters": [
           {
@@ -514,82 +514,22 @@
   },
   "components": {
     "schemas": {
-      "College": {
+      "Question": {
         "required": [
           "id",
-          "college_code",
-          "address",
-          "college_email"
+          "title"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
-          "admins": {
+          "question_set": {
             "required": [
               "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "contact_number": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
-              }
-            }
-          },
-          "rpc": {
-            "required": [
-              "id"
+              "name"
             ],
             "properties": {
               "id": {
@@ -598,133 +538,52 @@
               "name": {
                 "type": "string"
               },
-              "zone": {
-                "type": "string"
+              "questions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "main_college": {
-                "type": "string"
+              "activities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
-          "college_code": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            }
-          },
-          "principal": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "contact_number": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
-              }
-            }
+          "type": {
+            "type": "string",
+            "enum": [
+              "Rating",
+              "Comment"
+            ]
           }
         }
       },
-      "NewCollege": {
+      "NewQuestion": {
         "required": [
-          "college_code",
-          "address",
-          "college_email"
+          "title"
         ],
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
-          "admins": {
+          "question_set": {
             "type": "string"
           },
-          "rpc": {
-            "type": "string"
-          },
-          "college_code": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "contact_number": {
-            "type": "string"
-          },
-          "college_email": {
-            "type": "string"
-          },
-          "streams": {
-            "type": "string"
-          },
-          "principal": {
-            "type": "string"
+          "type": {
+            "type": "string",
+            "enum": [
+              "Rating",
+              "Comment"
+            ]
           }
         }
       }
@@ -732,7 +591,7 @@
   },
   "tags": [
     {
-      "name": "College"
+      "name": "Question"
     }
   ]
 }

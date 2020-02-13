@@ -1,201 +1,9 @@
 {
   "paths": {
-    "/activity-batch-attendances": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Activity-batch-attendance"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
+    "/upload/": {
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Upload a file",
         "responses": {
           "200": {
             "description": "response",
@@ -244,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity-batch-attendance"
+          "Upload - File"
         ],
         "requestBody": {
           "description": "",
@@ -252,17 +60,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewActivity-batch-attendance"
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
         }
       }
     },
-    "/activity-batch-attendances/count": {
+    "/upload/files/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the total number of uploaded files",
         "responses": {
           "200": {
             "description": "response",
@@ -311,15 +123,15 @@
         },
         "summary": "",
         "tags": [
-          "Activity-batch-attendance"
+          "Upload - File"
         ],
         "parameters": []
       }
     },
-    "/activity-batch-attendances/{id}": {
+    "/upload/files": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve all file documents",
         "responses": {
           "200": {
             "description": "response",
@@ -368,24 +180,15 @@
         },
         "summary": "",
         "tags": [
-          "Activity-batch-attendance"
+          "Upload - File"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
+        "parameters": []
+      }
+    },
+    "/upload/files/{id}": {
+      "get": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Retrieve a single file depending on its id",
         "responses": {
           "200": {
             "description": "response",
@@ -434,19 +237,8 @@
         },
         "summary": "",
         "tags": [
-          "Activity-batch-attendance"
+          "Upload - File"
         ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewActivity-batch-attendance"
-              }
-            }
-          }
-        },
         "parameters": [
           {
             "name": "id",
@@ -462,15 +254,18 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete an uploaded file",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "integer",
-                  "format": "int64"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -508,7 +303,75 @@
         },
         "summary": "",
         "tags": [
-          "Activity-batch-attendance"
+          "Upload - File"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/upload/search/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Search for an uploaded file",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Upload - File"
         ],
         "parameters": [
           {
@@ -525,121 +388,9 @@
       }
     }
   },
-  "components": {
-    "schemas": {
-      "Activity-batch-attendance": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "activity_batch": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "activity": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "start_datetime": {
-                "type": "datetime"
-              },
-              "end_datetime": {
-                "type": "datetime"
-              }
-            }
-          },
-          "student": {
-            "required": [
-              "id",
-              "father_first_name",
-              "father_last_name",
-              "address",
-              "date_of_birth",
-              "gender",
-              "role_number"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "Stream": {
-                "type": "string"
-              },
-              "documents": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "verifiedByCollege": {
-                "type": "boolean"
-              },
-              "physicallyHandicapped": {
-                "type": "boolean"
-              },
-              "father_first_name": {
-                "type": "string"
-              },
-              "father_last_name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "string"
-              },
-              "date_of_birth": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string"
-              },
-              "role_number": {
-                "type": "integer"
-              },
-              "educations": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "markedByStudent": {
-            "type": "boolean"
-          },
-          "verifiedByCollege": {
-            "type": "boolean"
-          }
-        }
-      },
-      "NewActivity-batch-attendance": {
-        "properties": {
-          "activity_batch": {
-            "type": "string"
-          },
-          "student": {
-            "type": "string"
-          },
-          "markedByStudent": {
-            "type": "boolean"
-          },
-          "verifiedByCollege": {
-            "type": "boolean"
-          }
-        }
-      }
+  "tags": [
+    {
+      "name": "Upload - File"
     }
-  },
-  "tags": []
+  ]
 }

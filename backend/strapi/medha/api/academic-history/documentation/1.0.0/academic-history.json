@@ -537,13 +537,16 @@
           },
           "student": {
             "required": [
-              "id"
+              "id",
+              "father_first_name",
+              "father_last_name",
+              "address",
+              "date_of_birth",
+              "gender",
+              "role_number"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "college": {
                 "type": "string"
               },
               "user": {
@@ -563,6 +566,30 @@
               },
               "physicallyHandicapped": {
                 "type": "boolean"
+              },
+              "father_first_name": {
+                "type": "string"
+              },
+              "father_last_name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "date_of_birth": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string"
+              },
+              "role_number": {
+                "type": "integer"
+              },
+              "educations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
