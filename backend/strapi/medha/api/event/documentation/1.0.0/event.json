@@ -573,9 +573,6 @@
               "name": {
                 "type": "string"
               },
-              "admins": {
-                "type": "string"
-              },
               "rpc": {
                 "type": "string"
               },

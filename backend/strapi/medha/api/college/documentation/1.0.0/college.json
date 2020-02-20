@@ -528,65 +528,6 @@
           "name": {
             "type": "string"
           },
-          "admins": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "first_name",
-              "last_name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "contact_number": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "zone": {
-                "type": "string"
-              },
-              "rpc": {
-                "type": "string"
-              },
-              "college": {
-                "type": "string"
-              }
-            }
-          },
           "rpc": {
             "required": [
               "id"
@@ -700,9 +641,6 @@
         ],
         "properties": {
           "name": {
-            "type": "string"
-          },
-          "admins": {
             "type": "string"
           },
           "rpc": {
