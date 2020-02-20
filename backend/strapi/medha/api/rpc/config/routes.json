@@ -21,7 +21,15 @@
       "path": "/rpcs/:id",
       "handler": "rpc.findOne",
       "config": {
-        "policies": []
+        "policies": ["isAllowed"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rpcs/:id/colleges",
+      "handler": "rpc.colleges",
+      "config": {
+        "policies": ["isAllowed"]
       }
     },
     {

@@ -12,10 +12,6 @@
     "name": {
       "type": "string"
     },
-    "admins": {
-      "plugin": "users-permissions",
-      "collection": "user"
-    },
     "rpc": {
       "model": "rpc"
     },
