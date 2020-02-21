@@ -517,8 +517,11 @@
       "Event": {
         "required": [
           "id",
+          "Title",
+          "description",
           "start_date_time",
           "end_date_time",
+          "address",
           "age"
         ],
         "properties": {
@@ -542,7 +545,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -562,6 +566,7 @@
           "colleges": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -598,7 +603,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -694,8 +700,11 @@
       },
       "NewEvent": {
         "required": [
+          "Title",
+          "description",
           "start_date_time",
           "end_date_time",
+          "address",
           "age"
         ],
         "properties": {

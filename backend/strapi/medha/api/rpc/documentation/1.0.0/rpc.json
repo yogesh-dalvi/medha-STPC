@@ -584,7 +584,8 @@
     "schemas": {
       "Rpc": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -595,7 +596,8 @@
           },
           "zone": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -612,6 +614,7 @@
           "main_college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -649,6 +652,9 @@
         }
       },
       "NewRpc": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"

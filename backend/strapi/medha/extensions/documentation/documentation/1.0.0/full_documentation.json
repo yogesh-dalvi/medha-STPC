@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/19/2020 2:49:55 PM"
+    "x-generation-date": "02/21/2020 10:29:59 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9445,6 +9445,142 @@
         ]
       }
     },
+    "/zones/{id}/rpcs": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Zone"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/zones/{id}/colleges": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Zone"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/email/": {
       "post": {
         "deprecated": false,
@@ -11671,7 +11807,10 @@
           },
           "academic_year": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "startDate",
+              "endDate"
             ],
             "properties": {
               "id": {
@@ -11720,7 +11859,10 @@
       },
       "Academic-year": {
         "required": [
-          "id"
+          "id",
+          "name",
+          "startDate",
+          "endDate"
         ],
         "properties": {
           "id": {
@@ -11738,6 +11880,11 @@
         }
       },
       "NewAcademic-year": {
+        "required": [
+          "name",
+          "startDate",
+          "endDate"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -11873,7 +12020,12 @@
           "activity": {
             "required": [
               "id",
+              "title",
+              "activity_type",
+              "start_datetime",
+              "end_datetime",
               "address",
+              "description",
               "age"
             ],
             "properties": {
@@ -11954,7 +12106,12 @@
       "Activity": {
         "required": [
           "id",
+          "title",
+          "activity_type",
+          "start_datetime",
+          "end_datetime",
           "address",
+          "description",
           "age"
         ],
         "properties": {
@@ -11974,7 +12131,10 @@
           },
           "academic_year": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "startDate",
+              "endDate"
             ],
             "properties": {
               "id": {
@@ -11994,6 +12154,7 @@
           "college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -12045,7 +12206,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -12150,7 +12312,12 @@
       },
       "NewActivity": {
         "required": [
+          "title",
+          "activity_type",
+          "start_datetime",
+          "end_datetime",
           "address",
+          "description",
           "age"
         ],
         "properties": {
@@ -12209,6 +12376,7 @@
       "College": {
         "required": [
           "id",
+          "name",
           "college_code",
           "address",
           "college_email"
@@ -12222,7 +12390,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -12253,7 +12422,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -12327,6 +12497,7 @@
       },
       "NewCollege": {
         "required": [
+          "name",
           "college_code",
           "address",
           "college_email"
@@ -12362,7 +12533,9 @@
         "required": [
           "id",
           "qualification",
-          "board"
+          "board",
+          "year_of_passing",
+          "marks"
         ],
         "properties": {
           "id": {
@@ -12443,7 +12616,9 @@
       "NewEducation": {
         "required": [
           "qualification",
-          "board"
+          "board",
+          "year_of_passing",
+          "marks"
         ],
         "properties": {
           "qualification": {
@@ -12474,8 +12649,11 @@
           "event": {
             "required": [
               "id",
+              "Title",
+              "description",
               "start_date_time",
               "end_date_time",
+              "address",
               "age"
             ],
             "properties": {
@@ -12608,8 +12786,11 @@
       "Event": {
         "required": [
           "id",
+          "Title",
+          "description",
           "start_date_time",
           "end_date_time",
+          "address",
           "age"
         ],
         "properties": {
@@ -12633,7 +12814,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -12653,6 +12835,7 @@
           "colleges": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -12689,7 +12872,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -12785,8 +12969,11 @@
       },
       "NewEvent": {
         "required": [
+          "Title",
+          "description",
           "start_date_time",
           "end_date_time",
+          "address",
           "age"
         ],
         "properties": {
@@ -12833,7 +13020,12 @@
           "activity": {
             "required": [
               "id",
+              "title",
+              "activity_type",
+              "start_datetime",
+              "end_datetime",
               "address",
+              "description",
               "age"
             ],
             "properties": {
@@ -12887,8 +13079,11 @@
           "event": {
             "required": [
               "id",
+              "Title",
+              "description",
               "start_date_time",
               "end_date_time",
+              "address",
               "age"
             ],
             "properties": {
@@ -13079,7 +13274,12 @@
             "items": {
               "required": [
                 "id",
+                "title",
+                "activity_type",
+                "start_datetime",
+                "end_datetime",
                 "address",
+                "description",
                 "age"
               ],
               "properties": {
@@ -13136,8 +13336,11 @@
             "items": {
               "required": [
                 "id",
+                "Title",
+                "description",
                 "start_date_time",
                 "end_date_time",
+                "address",
                 "age"
               ],
               "properties": {
@@ -13359,7 +13562,8 @@
       },
       "Rpc": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -13370,7 +13574,8 @@
           },
           "zone": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -13387,6 +13592,7 @@
           "main_college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -13424,6 +13630,9 @@
         }
       },
       "NewRpc": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -13438,7 +13647,8 @@
       },
       "State": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -13450,6 +13660,9 @@
         }
       },
       "NewState": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -13458,7 +13671,8 @@
       },
       "Stream": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -13470,6 +13684,9 @@
         }
       },
       "NewStream": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -13551,7 +13768,8 @@
           },
           "Stream": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -13645,7 +13863,9 @@
               "required": [
                 "id",
                 "qualification",
-                "board"
+                "board",
+                "year_of_passing",
+                "marks"
               ],
               "properties": {
                 "id": {
@@ -13725,7 +13945,8 @@
       },
       "Zone": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -13736,7 +13957,8 @@
           },
           "state": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -13750,6 +13972,9 @@
         }
       },
       "NewZone": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -13980,7 +14205,8 @@
           },
           "state": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -13993,7 +14219,8 @@
           },
           "zone": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -14009,7 +14236,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -14029,6 +14257,7 @@
           "college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"

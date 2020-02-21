@@ -538,7 +538,12 @@
           "activity": {
             "required": [
               "id",
+              "title",
+              "activity_type",
+              "start_datetime",
+              "end_datetime",
               "address",
+              "description",
               "age"
             ],
             "properties": {

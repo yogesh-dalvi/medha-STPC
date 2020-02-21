@@ -518,7 +518,9 @@
         "required": [
           "id",
           "qualification",
-          "board"
+          "board",
+          "year_of_passing",
+          "marks"
         ],
         "properties": {
           "id": {
@@ -599,7 +601,9 @@
       "NewEducation": {
         "required": [
           "qualification",
-          "board"
+          "board",
+          "year_of_passing",
+          "marks"
         ],
         "properties": {
           "qualification": {
