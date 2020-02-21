@@ -21,7 +21,13 @@ bookshelf.model("state", {
 
 bookshelf.model("zone", {
   requireFetch: false,
-  tableName: "zones"
+  tableName: "zones",
+  state() {
+    return this.belongsTo("state", "state", "id");
+  },
+  rpcs() {
+    return this.hasMany("rpc", "zone", "id");
+  }
 });
 
 bookshelf.model("rpc", {
@@ -63,6 +69,9 @@ bookshelf.model("college", {
   },
   admins() {
     return this.hasMany("user", "college", "id");
+  },
+  rpc() {
+    return this.belongsTo("rpc", "rpc", "id");
   }
 });
 

@@ -56,5 +56,19 @@ module.exports = {
       .model("rpc")
       .where({ id: id })
       .fetch({ withRelated: ["zone", "colleges"] });
+    // return bookshelf
+    //   .model("rpc")
+    //   .where({ id: id })
+    //   .fetch({
+    //     withRelated: [
+    //       "zone",
+    //       "colleges",
+    //       {
+    //         colleges: query => {
+    //           query.where({ id: 1 });
+    //         }
+    //       }
+    //     ]
+    //   })
   }
 };
