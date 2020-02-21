@@ -51,8 +51,9 @@ const data = Object.keys(roles).map(r => {
       const controllerWithAction = allControllerActions[name];
       let updatedActions;
       if (action.length) {
+        const regex = new RegExp(action.join("|"), "i");
         updatedActions = Object.keys(controllerWithAction).reduce((acc, a) => {
-          acc[a] = { enabled: action.includes(a) };
+          acc[a] = { enabled: regex.test(a) };
           return acc;
         }, {});
       } else {

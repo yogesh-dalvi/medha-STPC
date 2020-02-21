@@ -37,7 +37,7 @@
       "path": "/rpcs",
       "handler": "rpc.create",
       "config": {
-        "policies": []
+        "policies": ["validate"]
       }
     },
     {
