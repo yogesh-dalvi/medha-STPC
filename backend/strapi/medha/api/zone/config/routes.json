@@ -21,7 +21,7 @@
       "path": "/zones/:id",
       "handler": "zone.findOne",
       "config": {
-        "policies": []
+        "policies": ["isAllowed"]
       }
     },
     {
@@ -46,6 +46,22 @@
       "handler": "zone.delete",
       "config": {
         "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/zones/:id/rpcs",
+      "handler": "zone.rpcs",
+      "config": {
+        "policies": ["isAllowed"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/zones/:id/colleges",
+      "handler": "zone.colleges",
+      "config": {
+        "policies": ["isAllowed"]
       }
     }
   ]
