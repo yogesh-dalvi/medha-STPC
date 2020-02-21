@@ -538,8 +538,11 @@
           "event": {
             "required": [
               "id",
+              "Title",
+              "description",
               "start_date_time",
               "end_date_time",
+              "address",
               "age"
             ],
             "properties": {

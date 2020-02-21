@@ -517,7 +517,12 @@
       "Activity": {
         "required": [
           "id",
+          "title",
+          "activity_type",
+          "start_datetime",
+          "end_datetime",
           "address",
+          "description",
           "age"
         ],
         "properties": {
@@ -537,7 +542,10 @@
           },
           "academic_year": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "startDate",
+              "endDate"
             ],
             "properties": {
               "id": {
@@ -557,6 +565,7 @@
           "college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"
@@ -608,7 +617,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -713,7 +723,12 @@
       },
       "NewActivity": {
         "required": [
+          "title",
+          "activity_type",
+          "start_datetime",
+          "end_datetime",
           "address",
+          "description",
           "age"
         ],
         "properties": {

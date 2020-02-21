@@ -10,10 +10,12 @@
   },
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "start_date_time": {
       "type": "datetime",
@@ -24,7 +26,8 @@
       "required": true
     },
     "address": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "rpc": {
       "model": "rpc"
@@ -46,8 +49,8 @@
       "required": false
     },
     "question_set": {
-      "via": "events",
-      "model": "question-set"
+      "model": "question-set",
+      "via": "events"
     }
   }
 }

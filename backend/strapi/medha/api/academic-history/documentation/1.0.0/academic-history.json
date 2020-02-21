@@ -595,7 +595,10 @@
           },
           "academic_year": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "startDate",
+              "endDate"
             ],
             "properties": {
               "id": {

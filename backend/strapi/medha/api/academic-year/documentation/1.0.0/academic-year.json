@@ -529,7 +529,10 @@
     "schemas": {
       "Academic-year": {
         "required": [
-          "id"
+          "id",
+          "name",
+          "startDate",
+          "endDate"
         ],
         "properties": {
           "id": {
@@ -547,6 +550,11 @@
         }
       },
       "NewAcademic-year": {
+        "required": [
+          "name",
+          "startDate",
+          "endDate"
+        ],
         "properties": {
           "name": {
             "type": "string"

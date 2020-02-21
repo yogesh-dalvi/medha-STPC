@@ -156,7 +156,7 @@
       },
       {
         "name": "zone",
-        "action": ["find", "findone"]
+        "action": ["find", "findone", "rpcs", "colleges"]
       }
     ],
     "grantAllPermissions": false

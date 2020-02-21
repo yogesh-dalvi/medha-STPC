@@ -1258,7 +1258,8 @@
           },
           "state": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -1271,7 +1272,8 @@
           },
           "zone": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -1287,7 +1289,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -1307,6 +1310,7 @@
           "college": {
             "required": [
               "id",
+              "name",
               "college_code",
               "address",
               "college_email"

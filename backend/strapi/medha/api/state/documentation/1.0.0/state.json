@@ -516,7 +516,8 @@
     "schemas": {
       "State": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -528,6 +529,9 @@
         }
       },
       "NewState": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"

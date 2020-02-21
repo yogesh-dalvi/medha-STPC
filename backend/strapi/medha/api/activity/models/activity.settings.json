@@ -10,7 +10,8 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "activity_type": {
       "type": "enumeration",
@@ -18,7 +19,8 @@
         "workshop",
         "industrialVisit",
         "training"
-      ]
+      ],
+      "required": true
     },
     "academic_year": {
       "model": "academic-year"
@@ -27,10 +29,12 @@
       "model": "college"
     },
     "start_datetime": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "end_datetime": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "education_year": {
       "type": "enumeration",
@@ -49,7 +53,8 @@
       "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "upload_logo": {
       "model": "file",
@@ -65,8 +70,8 @@
       "type": "string"
     },
     "question_set": {
-      "via": "activities",
-      "model": "question-set"
+      "model": "question-set",
+      "via": "activities"
     }
   }
 }

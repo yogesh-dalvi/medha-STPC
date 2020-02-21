@@ -585,6 +585,7 @@
       "College": {
         "required": [
           "id",
+          "name",
           "college_code",
           "address",
           "college_email"
@@ -598,7 +599,8 @@
           },
           "rpc": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -629,7 +631,8 @@
           },
           "streams": {
             "required": [
-              "id"
+              "id",
+              "name"
             ],
             "properties": {
               "id": {
@@ -703,6 +706,7 @@
       },
       "NewCollege": {
         "required": [
+          "name",
           "college_code",
           "address",
           "college_email"
