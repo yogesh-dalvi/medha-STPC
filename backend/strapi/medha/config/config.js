@@ -58,6 +58,9 @@ bookshelf.model("college", {
       "stream_id"
     );
   },
+  rpc() {
+    return this.belongsTo("rpc", "rpc", "id");
+  },
   principal() {
     return this.belongsTo("user", "principal", "id");
   },

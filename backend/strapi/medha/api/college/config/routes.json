@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/colleges/:id/students",
+      "handler": "college.showStudents",
+      "config": {
+        "policies": ["isAllowed"]
+      }
+    },
+    {
+      "method": "GET",
       "path": "/colleges/count",
       "handler": "college.count",
       "config": {
@@ -21,7 +29,7 @@
       "path": "/colleges/:id",
       "handler": "college.findOne",
       "config": {
-        "policies": []
+        "policies": ["isAllowed"]
       }
     },
     {
