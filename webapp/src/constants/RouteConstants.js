@@ -1,0 +1,15 @@
+export const FORGOT_PASSWORD_URL = "/forgot-password";
+export const NEW_REGISTRATION_URL = "#";
+export const SIGN_IN_URL = "/login";
+export const LOGOUT_URL = "/logout";
+export const NOT_FOUND_URL = "/404";
+export const DASHBOARD_URL = "/";
+export const ADD_USER = "/add-user";
+export const VIEW_STATES = "/states";
+export const VIEW_ZONES = "/zones";
+export const VIEW_RPC = "/rpc";
+export const ADD_STATES = "/add-states";
+export const ADD_ZONES = "/add-zones";
+export const ADD_RPC = "/add-rpc";
+export const ADD_COLLEGE = "/add-college";
+export const VIEW_COLLEGE = "/view-college";

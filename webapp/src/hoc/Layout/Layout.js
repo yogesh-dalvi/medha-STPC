@@ -1,38 +1,60 @@
-import React, { Component } from "react";
+import React from "react";
+import clsx from "clsx";
+import SideAndTopNavBar from "../../components/SideAndTopNavBar/SideAndTopNavBar";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useMediaQuery } from "@material-ui/core";
+import auth from "../../components/Auth/Auth";
 
-import Aux from "../Aux/Aux";
-import styles from "./Layout.module.css";
-import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
-import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
+const useStyles = makeStyles(theme => ({
+  root: {
+    paddingTop: 56,
+    height: "100%",
+    [theme.breakpoints.up("sm")]: {
+      paddingTop: 64
+    }
+  },
+  shiftContent: {
+    paddingLeft: 240
+  },
+  content: {
+    height: "100%"
+  }
+}));
 
-class Layout extends Component {
-  state = {
-    showSideDrawer: false
-  };
+const Layout = props => {
+  const { children } = props;
 
-  sideDrawerClosedHandler = () => {
-    this.setState({ showSideDrawer: false });
-  };
+  const classes = useStyles();
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"), {
+    defaultMatches: true
+  });
 
-  sideDrawerToggleHandler = () => {
-    this.setState(prevState => {
-      return { showSideDrawer: !prevState.showSideDrawer };
-    });
-  };
-
-  render() {
+  if (auth.getToken() != null && isDesktop) {
     return (
-      <Aux>
-        {/* <div>Toolbar, Sidedrawer, Backdrop</div> */}
-        <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
-        <SideDrawer
-          open={this.state.showSideDrawer}
-          closed={this.sideDrawerClosedHandler}
-        />
-        <main className={styles.Content}>{this.props.children}</main>
-      </Aux>
+      <div
+        className={clsx({
+          [classes.root]: true,
+          [classes.shiftContent]: isDesktop
+        })}
+      >
+        <SideAndTopNavBar />
+        <main className={classes.content}>{children}</main>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className={clsx({
+          [classes.root]: true,
+          [classes.shiftContent]: false
+        })}
+      >
+        <SideAndTopNavBar />
+        <main className={classes.content}>{children}</main>
+      </div>
     );
   }
-}
+};
 
 export default Layout;
